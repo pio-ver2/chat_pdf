@@ -9,32 +9,39 @@ from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
 import platform
 
-# Estilo visual con temática oceánica
+# Estilo visual con colores oceánicos personalizados
 st.markdown("""
     <style>
         body {
-            background-color: #e0f7fa;  /* Azul claro del océano */
-            color: #004d40;  /* Texto en verde océano */
+            background-color: #003366;  /* Azul marino oscuro */
+            color: #ffffff;  /* Texto blanco para resaltar */
         }
         .stTitle {
-            color: #0077b6;  /* Título en azul océano */
+            color: #80deea;  /* Azul océano claro para el título */
         }
         .stSubheader {
-            color: #0077b6;  /* Subtítulos en azul oscuro */
+            color: #b2ebf2;  /* Azul más claro para los subtítulos */
         }
         .stButton>button {
-            background-color: #00796b;  /* Botones de color verde océano */
-            color: white;  /* Texto blanco en el botón */
+            background-color: #004d40;  /* Verde océano oscuro para los botones */
+            color: white;  /* Texto blanco en los botones */
         }
         .stImage>div>img {
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .stSidebar {
-            background-color: #b2dfdb;  /* Barra lateral de agua suave */
+            background-color: #00897b;  /* Verde océano suave para el panel lateral */
         }
         .stTextInput>div>div>input {
-            background-color: #80d0c7;  /* Input de texto de fondo celeste */
+            background-color: #4db6ac;  /* Fondo de los campos de texto en verde suave */
+        }
+        .stFileUploader>div>div>div>button {
+            background-color: #00796b;  /* Botón de carga de archivo en verde oscuro */
+            color: white;  /* Texto blanco */
+        }
+        .stMarkdown {
+            color: #ffffff;  /* Texto de Markdown en blanco */
         }
     </style>
 """, unsafe_allow_html=True)
@@ -42,7 +49,7 @@ st.markdown("""
 # Título de la aplicación con emojis
 st.title("🌊 **Generación Aumentada por Recuperación (RAG)** 💬")
 
-# Mostrar versión de Python
+# Mostrar la versión de Python
 st.write("👨‍💻 **Versión de Python**:", platform.python_version())
 
 # Cargar y mostrar imagen relacionada con el océano
@@ -52,7 +59,7 @@ try:
 except Exception as e:
     st.warning(f"⚠️ No se pudo cargar la imagen: {e}")
 
-# Barra lateral
+# Barra lateral con descripción
 with st.sidebar:
     st.subheader("📝 **Este Agente te ayudará a realizar análisis sobre el PDF cargado**")
     st.write("""
@@ -129,6 +136,6 @@ else:
 # Información adicional en el pie de página
 st.markdown("---")
 st.caption("""
-🌊 **Acerca de la aplicación**: Esta aplicación utiliza modelos de IA para realizar preguntas y obtener respuestas basadas en documentos PDF cargados. 
+🌊 **Acerca de la aplicación**: Esta aplicación utiliza **YOLOv5** para detección de objetos en imágenes capturadas con la cámara. 
 Desarrollada con **Streamlit**, **OpenAI**, y **Langchain**. 🌟
 """)
